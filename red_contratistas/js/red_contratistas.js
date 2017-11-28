@@ -31,7 +31,7 @@ height = height - margin.top - margin.bottom;
 //Creation of the simulation parameters: Creation of the forces that will mandate the simulation
 var forceSimulation = d3.forceSimulation()
 						.force("collide", d3.forceCollide().radius(function(d) {return 5})) //Prevents nodes from overlapping
-						.force("radial", d3.forceRadial(function(d) { return (d.group == "entidad") ? -10 : 300; }).y(height/2).x(width/2)) //Sends contratistas to the outside
+						.force("radial", d3.forceRadial(function(d) { return (d.group == "entidad") ? -30 : 200; })//.y(height/2).x(width/2)) //Sends contratistas to the outside
 						.force("link", d3.forceLink().id(function(d) { return (d.id) })) //Provides link forces to the nodes connected between them
 						.force("center", d3.forceCenter((width / 2), (height / 2)));
 
