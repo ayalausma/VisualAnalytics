@@ -9,7 +9,6 @@ var margin = {
     right: 50,
 }
 
-
 //Creation of a categorical color scale for the nodes according to their group membership (Requires d3 Chromatic library)
 var color = d3.scaleOrdinal(d3.schemeDark2);
 var colorGroup = ["entidad", "contratista"];
@@ -21,8 +20,7 @@ var svgRedContratistas = d3.select("#red_contratistas")
 						   .attr("width", width)
 						   .attr("height", height)
 						   .append("g")
-						   .attr("transform", "translate(" + margin.top + ", " + margin.left + ")");
-
+						   .attr("transform", "translate(" + (margin.left + 150) + ", " + margin.top + ")");
 
 //Redefining the effective drawing area
 width = width - margin.left - margin.right;
@@ -30,7 +28,7 @@ height = height - margin.top - margin.bottom;
 
 //Creation of the simulation parameters: Creation of the forces that will mandate the simulation
 var forceSimulation = d3.forceSimulation()
-						.force("collide", d3.forceCollide().radius(function(d) {return 5})) //Prevents nodes from overlapping
+						.force("collide", d3.forceCollide().radius(function(d) {return (d.group == "entidad") ? 10 : 4;})) //Prevents nodes from overlapping
 						.force("radial", d3.forceRadial(function(d) { return (d.group == "entidad") ? -30 : 300; }).y(height/2).x(width/2)) //Sends contratistas to the outside
 						.force("link", d3.forceLink().id(function(d) { return (d.id) })) //Provides link forces to the nodes connected between them
             .force("center", d3.forceCenter((width / 2), (height / 2)));
@@ -46,7 +44,7 @@ d3.json("datasets/red_contratistas.json", function(error, data) {
 
   //Creation of the size scale for the nodes
   var nodeSize = d3.scaleLinear().domain(d3.extent(nodes.map(function(d) { return +d.cuantiaContratos; })))
-  							 	 .range([1,20])
+  							 	 .range([2.5,30])
 
   //Adding the nodes to the canvas
 
