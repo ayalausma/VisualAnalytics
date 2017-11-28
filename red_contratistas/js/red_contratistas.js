@@ -20,7 +20,7 @@ var svgRedContratistas = d3.select("#red_contratistas")
 						   .attr("width", width)
 						   .attr("height", height)
 						   .append("g")
-						   .attr("transform", "translate(" + (margin.left + 150) + ", " + margin.top + ")");
+						   .attr("transform", "translate(" + (margin.left + 100) + ", " + margin.top + ")");
 
 //Redefining the effective drawing area
 width = width - margin.left - margin.right;
