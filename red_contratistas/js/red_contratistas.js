@@ -9,6 +9,10 @@ var margin = {
     right: 50,
 }
 
+//Redefining the effective drawing area
+width = width - margin.left - margin.right;
+height = height - margin.top - margin.bottom;
+
 //Creation of a categorical color scale for the nodes according to their group membership (Requires d3 Chromatic library)
 var color = d3.scaleOrdinal(d3.schemeDark2);
 var colorGroup = ["entidad", "contratista"];
@@ -19,12 +23,7 @@ var svgRedContratistas = d3.select("#red_contratistas")
 						   .append("svg")
 						   .attr("width", width)
 						   .attr("height", height)
-						   .append("g")
-						   .attr("transform", "translate(" + (margin.left + 100) + ", " + margin.top + ")");
-
-//Redefining the effective drawing area
-width = width - margin.left - margin.right;
-height = height - margin.top - margin.bottom;
+						   .append("g");
 
 //Creation of the simulation parameters: Creation of the forces that will mandate the simulation
 var forceSimulation = d3.forceSimulation()
