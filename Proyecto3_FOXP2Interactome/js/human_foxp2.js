@@ -127,8 +127,8 @@ d3.json("datasets/human_foxp2.json", function(error, graphHuman) {
 
         var normalise = Math.sqrt((dx * dx) + (dy * dy));
 
-        var offSetX = midpoint_x + offset*(dy/normalise);
-        var offSetY = midpoint_y - offset*(dx/normalise);
+        var offSetX = midpoint_x + offset*(dx/normalise);
+        var offSetY = midpoint_y - offset*(dy/normalise);
 
         return "M" + d.source.x + "," + d.source.y +
             "S" + offSetX + "," + offSetY +

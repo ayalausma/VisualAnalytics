@@ -1,23 +1,19 @@
-  .axisLabels
-  {
+  .axisLabels    {
 		font-family: 'Oxygen', sans-serif;    
     font-size: 15px;
   }
   
-  .chartTitle
-  {
+  .chartTitle {
     font-size: 17px;
     font-family: 'Oxygen';
   }
 
-.nav-link
-{
+.nav-link {
    font-family: 'Oxygen', sans-serif;
    font-size: 14px;
 }
 
-.pagetitle
-{
+.pagetitle {
   padding-top: 70px;
   color: white;
   text-align: center;
@@ -26,26 +22,17 @@
   font-size: 50px;
 }
 
-
-.span6
-{
-  float: none;
-  margin: 0 auto;
-}
-
-p, li{
+p, li {
   font-family: 'Average', serif;
   font-size: 18px;
   text-align: justify;
 }
 
-#textbody, #figurecontainer
-{
+#textbody, #figurecontainer {
   padding-bottom: 40px;
 }
 
-.textsection
-{
+.textsection {
     padding-top: 20px;
 }
 
@@ -59,18 +46,23 @@ svg {
   display: block;
 }
 
-
-.link {
-  fill: none;
-  stroke: #ddd;
-  stroke-width: 1px;
-}
-
-.node {
-  stroke: #e8e8e8;
-  stroke-width: 0px;
-}
-
 circle {
   cursor: pointer;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  /*width: 60px;
+  height: 28px;*/
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+text.nodeLabel {
+  font: 5px sans-serif;
 }
