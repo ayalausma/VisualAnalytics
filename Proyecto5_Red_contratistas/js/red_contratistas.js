@@ -60,6 +60,8 @@ d3.json("datasets/red_contratistas.json", function(error, data) {
   var nodeSize = d3.scaleLinear().domain(d3.extent(nodes.map(function(d) { return +d.cuantiaContratos; })))
   							 	 .range([2,40])
 
+  console.log(nodeSize);
+
   //Adding the nodes to the canvas
   var drawingNodes = svgRedContratistas.selectAll(".node")
   					                           .data(nodes)
